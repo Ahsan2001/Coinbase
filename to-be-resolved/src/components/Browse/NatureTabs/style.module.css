@@ -1,0 +1,186 @@
+.NatureTabsMain{
+    background: #F5F5F5;
+    padding: 100px 0;
+}
+
+.NatureTabsMain h1{
+    text-align: center;
+    font: normal normal normal 55px/74px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding-bottom: 20px;
+}
+
+.innerCateogory{
+    position: relative;
+    aspect-ratio: 3/2;
+    transition: 0.5s;
+}
+
+
+
+.iconsMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    transition: 0.5s;
+
+}
+
+.iconsMain .leftIcon{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.iconsMain svg{
+    background: #fff;
+    padding: 2px 4px;
+    border-radius: 35%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.iconsMain svg:hover {
+    background:#1BD214;
+    color: #fff;
+}
+
+
+
+.innerCateogory img{
+    transition: 0.5s;
+    box-shadow: 0px 0px 0px 0px #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #7a755440;
+    object-fit: contain;
+}
+
+
+.innerCateogory:hover img {
+    box-shadow: 0px 0px 20px 5px #00000039;
+    cursor: pointer;
+}
+
+
+.innerCateogory h3{
+    text-align: center;
+    font: normal normal normal 14px/20px Montserrat;
+    letter-spacing: 0px;
+    color: #2E2E2E;
+    opacity: 1;
+}
+
+
+
+.natureTabMainWrap button:hover,
+.natureTabMainWrap button{
+    background: #7A7554 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    text-align: left;
+    font: normal normal medium 16px/19px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding: 10px 40px;
+    opacity: 1;
+}
+
+ul.titleMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+ul.titleMain li{
+    list-style: none;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #2E2E2E;
+    border-radius: 27px;
+    text-align: center;
+    font: normal normal medium 13px/20px Montserrat;
+    letter-spacing: 0px;
+    color: #2E2E2E;
+    opacity: 1;
+    padding: 8px 16px;
+}
+
+ul.titleMain li[aria-selected="true"],
+ul.titleMain li:focus-visible,
+ul.titleMain li:active{
+    outline: none;
+    color: #fff;
+    background: #3B3838 0% 0% no-repeat padding-box !important;
+}
+
+ul.titleMain li:hover{
+    cursor: pointer;
+}
+
+
+
+.innerCateogory:hover  .iconsMain{
+    display: flex;
+}
+
+.boxMainWrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.customDimensionSet{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 5px;
+}
+
+
+
+@media (max-width: 1276px) {
+    .NatureTabsMain{
+        padding: 60px 0;
+    }
+        
+    .customDimensionSet{
+        width: 85%;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 976px) {
+    .NatureTabsMain h1{
+        font: normal normal normal 38px/54px Playfair Display;
+    }
+    .customDimensionSet{
+        width: 90%;
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .NatureTabsMain{
+        padding: 30px 0;
+    }
+    .customDimensionSet{
+        width: 95%;
+    }
+}

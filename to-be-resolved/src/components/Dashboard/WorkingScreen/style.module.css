@@ -1,0 +1,40 @@
+.innerScreen{
+    text-align: center;
+}
+
+
+.btnsPreviewCart  {
+    display: flex;
+    padding: 70px 0px 70px 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.btnsPreviewCart  .btnPreview  a{
+    font: normal normal normal 16px/31px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    background: #6D6D6D 0% 0% no-repeat padding-box;
+    border-radius: 27px;
+    padding: 10px 30px;
+}
+.btnsPreviewCart  .btnCart {
+    margin-left: 10px;
+}
+
+.btnsPreviewCart  .btnCart button{
+    font: normal normal normal 16px/31px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #7A7554 0% 0% no-repeat padding-box;
+    border-radius: 27px;
+    padding: 4px 30px;
+    text-transform: capitalize;
+}
+
+.innerScreen{
+    width: 80%;
+    margin: 0 auto;
+}

@@ -1,0 +1,248 @@
+/* Select Images Css  */
+ 
+.checkoutMainWrap{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.checkoutMainWrap h3{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #000000;
+}
+
+.checkoutMainWrap ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.checkoutMainWrap ul li{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #9B9B9B;
+    padding: 16px 5px;
+    width: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.checkoutMainWrap ul  li[aria-selected="true"],
+.checkoutMainWrap ul  li:focus-visible,
+.checkoutMainWrap ul  li:active{
+    background: rgba(236, 236, 236, 0.38);
+    border-radius: 20px 20px 0px 0px;
+    outline: none;
+    border: none;
+    color: #000000;
+}
+
+.checkoutMainWrap label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+}
+
+section.imagesSetting{
+    background: rgba(236, 236, 236, 0.38);
+    border-radius: 0px 0px 37px 37px;
+    padding: 50px;
+}
+
+section.imagesSetting h5{
+    font-style: normal;
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+section.imagesSetting h6{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+section.imagesSetting .certification{
+    display: flex;
+    padding-bottom: 100px;
+    align-items: center;
+}
+
+section.imagesSetting .certification span{
+    padding-left: 0;
+}
+
+
+
+
+
+
+/* Billing Address  */
+
+
+
+.billingAddress{
+    margin-bottom: 100px;
+    background: rgba(236, 236, 236, 0.38);
+    border-radius: 0px 0px 37px 37px;
+    padding: 50px;
+}
+
+
+.inputInner{
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.billingAddress .inputInner input{
+    width: 100%;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    border-bottom: 0 !important;
+
+}
+
+
+.billingAddress .inputInner input::after,
+.billingAddress .inputInner input::before{
+    border-bottom: 0 !important;
+}
+
+
+
+
+.btnsMainWrap {
+    text-align: end;
+}
+
+.btnsMainWrap_3 button,
+.btnsMainWrap_2 button,
+.btnsMainWrap button{
+    background: #000000;
+    border-radius: 26px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    padding: 8px 35px;
+}
+
+.btnsMainWrap_3 button:hover,
+.btnsMainWrap_2 button:hover,
+.btnsMainWrap button:hover{
+      background: #7a7554;  
+}
+
+
+.btnsMainWrap_2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 50px;
+}
+.btnsMainWrap_3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+.paymentInformation{
+    margin-bottom: 100px;
+    background: rgba(236, 236, 236, 0.38);
+    border-radius: 0px 0px 37px 37px;
+    padding: 50px;
+}
+
+
+
+.creditCardDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.creditCardDetail h4{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1D1D1D;
+    pointer-events: none;
+}
+
+.creditCardDetail label{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.inputInner input{
+    padding: 12px 20px;
+}
+
+.forFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+.creditCardDetail{
+ width: 100%;
+}
+
+
+.centerDiv{
+   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+
+    .checkoutMainWrap ul li{
+        font-size: 16px;
+        padding: 10px 5px;
+    }
+    
+    .billingAddress{
+        margin-bottom: 15px;
+        padding: 10px 0;
+    }
+    
+}

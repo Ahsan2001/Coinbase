@@ -1,0 +1,107 @@
+.registerBg{
+    background-image: url("../../assets/images/register-bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 160px;
+}
+
+.RegisterformHead {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+
+.RegisterformHead h1{
+    text-align: center;
+    font: normal normal normal 55px/74px Playfair Display !important;
+    letter-spacing: 0px;
+    color: #7A7554 !important;
+    margin-bottom: 20px;
+}
+
+.RegisterformHead h6{
+    text-align: center;
+    font: normal normal normal 20px/31px Montserrat !important; 
+    letter-spacing: 0px;
+    color: #2E2E2E !important;;
+    opacity: 1;
+}
+
+
+.registerBg form .parentBox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.registerBg form .parentBox input{
+    border-radius: 27px;
+    outline: none;  
+    padding-right: 20px;
+    font: normal normal normal 16px/31px Montserrat !important ;
+    letter-spacing: 0px;
+    z-index: 2;
+    color: #2E2E2E;
+}
+
+.registerBg form .parentBox label,
+.registerBg form .parentBox label:focus{
+    color: #2E2E2E !important; 
+    border-color: #2E2E2E !important;
+    z-index: 22;
+    outline: #2E2E2E !important;
+}
+.registerBg form .parentBox input:focus{
+    border-color: #2E2E2E !important;
+    outline: #2E2E2E !important;
+}
+
+.registerBg form .parentBox fieldset{
+    border-radius: 27px;
+    background: #fff;
+    color: #000000;
+}
+.registerBg form .parentBox fieldset legend span{
+    letter-spacing: 0px;
+    color: #2E2E2E !important;
+}
+
+
+.registerBg form .parentBox fieldset:focus-visible {
+    outline: none !important;
+}
+
+
+.registerBg form .parentBox svg{
+    position: absolute;
+    z-index: 2;
+    right: 11px;
+    top: 17px;
+    color: #2E2E2E !important;
+}
+
+button.signUpbtn{
+   background: #2E2E2E 0% 0% no-repeat padding-box;
+   border-radius: 27px;
+   text-align: center;
+   font: normal normal normal 16px/31px Montserrat !important;
+   letter-spacing: 0px;
+   color: #BFC26D ;
+   opacity: 1;
+   width: 100%;
+}
+
+
+
+button.loading{
+    background: #000000 0% 0% no-repeat padding-box;
+    border-radius: 27px;
+    text-align: center;
+    font: normal normal normal 16px/31px Montserrat !important;
+    letter-spacing: 0px;
+    color: #BFC26D ;
+    opacity: 1;
+    width: 100%;
+
+}

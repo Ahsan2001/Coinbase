@@ -1,0 +1,275 @@
+section.cartMainWrap{
+    padding: 20px 0 50px;
+}
+
+section.cartMainWrap h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+}
+
+section.cartMainWrap h3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    padding: 30px 0 40px;
+    text-align: center;
+    color: #1D1D1D;
+}
+
+
+.cartBoxMain {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 35px;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+.cartImage img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 30px;
+    width: 90%;
+
+}
+
+.cartImage{
+    position: relative;
+    text-align: center;
+}
+
+.cartImage svg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #7A7554;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.forFlexDirection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.cartDetails{
+    width: 100%;
+}
+
+
+.cartBoxTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.cartBoxUses{
+    margin-top: 10px;
+}
+
+
+.cartBoxUses h5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    display: block;
+    color: #1D1D1D;
+}
+
+
+.cartBoxUses label{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #1D1D1D;
+}
+
+
+
+.EditCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.EditCart h5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 5px;
+    color: #1D1D1D;
+}
+
+.cartBoxTitle svg{
+    color: #7A7554;
+    cursor: pointer;
+}
+
+
+.cartBoxTitle h5{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1D1D1D;
+    text-transform: capitalize;
+}
+
+.cartBoxTitle h5 span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    display: block;
+    color: #9B9B9B;
+}
+
+
+button.sub{
+    background: #fff;
+    box-shadow: 2px 2px 5px 1px rgb(213 191 153 / 40%);
+    border-radius: 7px;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px 0 0px;
+}
+
+button.add{
+    background: #7A7554;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    padding: 5px 7px;
+    margin: 0 0 0 5px;
+}
+
+
+
+
+
+
+
+
+/* col-md-4  */
+
+.subtotal_head{
+    background: #F7F7F7;
+    padding: 30px 25px;
+    border-radius: 30px;
+}
+
+.subtotal_head ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subtotal_head ul li{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #1D1D1D;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+
+
+.subtotal_head ul li.bolder{
+    font-weight: 700;
+    padding-top: 15px;
+    border-top: 1px solid #000000;
+}
+
+.subtotal_head ul li span{
+    text-align: end;
+}
+
+.term_conditions{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.term_conditions span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1D1D1D;
+    opacity: 0.93;
+    padding-left: 0;
+}
+
+
+
+.term_conditions span input{
+    padding: 2px;
+}
+
+.term_conditions span a {
+    color: #7A7554;
+}
+
+.placeAndOrder {
+    margin-top: 20px;
+}
+
+.placeAndOrder button{
+    background: #1D1D1D;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    padding: 7px 0;
+    width: 100%;
+    letter-spacing: 0.04em;
+}
+
+
+.placeAndOrder h6{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    padding: 20px 0 0;
+    font-size: 16px;
+    text-align: center;
+    color: #1D1D1D;
+    opacity: 0.93;
+}
+
+
+
+.subtotal_mainWrap{
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 20px;
+}
+
+
+
+.skeletonCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

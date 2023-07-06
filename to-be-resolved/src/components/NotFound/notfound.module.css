@@ -1,0 +1,50 @@
+section.NotFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section.NotFound h1{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 120px;
+    background: -webkit-linear-gradient(#1E213D, #7a7554);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section.NotFound h3{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 40px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+section.NotFound  p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+section.NotFound a{
+    background: #7a7554;
+    color: #fff;
+    text-align: center;
+    padding: 8px 24px;
+    font-size: 16px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 767px) {
+    section.NotFound h1{
+        font-size: 80px;
+    }
+
+    section.NotFound h3{
+        margin-top: 30px;
+    }
+}
+

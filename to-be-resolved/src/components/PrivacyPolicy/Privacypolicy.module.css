@@ -1,0 +1,47 @@
+.aboutParentBox {
+  background: #f5f5f5 0 0 no-repeat padding-box;
+  padding: 50px 0;
+}
+
+.aboutRefundPage h1 {
+  font: normal normal normal 40px/40px Playfair Display !important;
+  letter-spacing: 1.5px !important;
+  color: #7a7554;
+  text-transform: uppercase;
+  padding: 0 0 20px 0;
+}
+
+.aboutRefundPage h6 {
+  color: #B8B8B8;
+  font-family: "Josefin Sans";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 14px 0;
+  line-height: 36px;
+}
+
+.aboutRefundDetail h4 {
+  font: normal normal normal 35px/35px Playfair Display !important;
+  letter-spacing: 1.5px !important;
+  color: #7a7554;
+  text-transform: uppercase;
+  padding: 0 0 20px 0;
+}
+
+.aboutRefundDetail p {
+  color: #B8B8B8;
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0px;
+  line-height: 35px;
+  padding-bottom: 14px;
+}
+
+
+
+
+
+

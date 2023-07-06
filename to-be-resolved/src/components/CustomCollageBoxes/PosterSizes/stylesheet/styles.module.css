@@ -1,0 +1,206 @@
+.OneTopBottom, .OneLeftRight, .BorderAllSides, .TwoTopOneBottom, .TwoTopTwoBottom, .ThreeBottom, .Six_Two_Border_Images, .TwoBorderTop, .Six_Border_Images, .Two_Border_Images, .Five_Two_Border_Images, .CenterLines {
+    background: #fff;
+    border: 1px solid #393939;
+ }
+ .Four_Border {
+    height: 700px;
+    border: 1px solid #393939;
+ }
+ .OneTopBottom .Border_Bottom {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .OneTopBottom .Border_Top {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .OneLeftRight .Border_Right {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .OneLeftRight .Border_Left {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .TwoTopOneBottom .Border_Top {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoTopOneBottom .Border_Right_Bottom {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoTopTwoBottom .Border_Right_Bottom {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoTopTwoBottom .Border_Left_Bottom {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoTopTwoBottom .Border_Right_Top {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoTopTwoBottom .Border_Left_Top {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .ThreeBottom .Border_Bottom {
+    border: 1px solid #393939;
+    height: 234px;
+ }
+ .CenterLines .Border_Left_Right {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .TwoBorderTop .Border_Four {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoBorderTop .Border_Top {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .TwoBorderTop .Border_Bottom {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .Two_Border_Images .Border_Right {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .Two_Border_Images .Border_left {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .Six_Border_Images .Border_Four {
+    border: 1px solid #393939;
+    height: 234px;
+ }
+ .Six_Two_Border_Images .Border_Four {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .Five_Two_Border_Images .Border_Four {
+    border: 1px solid #393939;
+    height: 349px;
+ }
+ .Five_Two_Border_Images .Border_Left_Right {
+    border: 1px solid #393939;
+    height: 700px;
+ }
+ .custom_images_fit img {
+    width: 100% !important;
+    height: 100% !important;
+     object-fit: cover !important;
+ }
+
+
+.hoverEffectBtn:hover .editDeleteBtn{
+   opacity: 1;
+}
+
+
+.hoverEffectBtn{
+   position: relative;
+}
+
+.editDeleteBtn{
+   position: absolute;
+   top: 0%;
+   width: 100%;
+   height: 100%;
+   justify-content: space-between;
+   align-items: flex-start;
+   opacity: 0;
+}
+
+
+.editDeleteBtn button {
+   font: normal normal normal 14px/20px Montserrat;
+   border: none;
+   justify-content: center;
+   color: rgb(255, 255, 255);
+   z-index: 22222;
+   background: none;
+   transition: 0.5s;
+   margin: 10px;
+}
+
+.editDeleteBtn button:hover{
+   color: #7a7554;;
+   cursor: pointer;
+}
+
+
+.editDeleteBtn::after{
+   width: 100%;
+   height: 100%;
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: rgba(0,0,0,0.5);
+   transition: 0.5s;
+}
+
+
+
+.PopUpMainWrap{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 900px;
+   height: 800px;
+   background: #000;
+   overflow: hidden;
+   border: 2px solid #000;
+   box-shadow: 24;
+}
+
+
+.popUpImg {
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+
+
+
+.cropperMainButton{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 20px 0 40px;
+   background: #000;
+}
+
+.cropperMainButton button {
+   background: #7a7554;
+   color: #fff;
+   padding: 10px;
+   transition: 0.5s;
+   border-radius: 4px;
+   margin: 0 2px;
+}
+
+.cropperMainButton button:hover{
+   background: #fff;
+   color: #000000;
+   cursor: pointer;
+}
+
+
+.cropperMainButton button  svg{
+   font-size: 25px;
+}
+
+.cropperMainWrap{
+   padding: 50px;
+}
+

@@ -1,0 +1,73 @@
+.needHelp{
+    background-image: url("../../assets/images/needHelp-Bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0 0 60px;
+}
+
+.needHelp h1{
+    position: relative;
+    font: normal normal normal 40px/53px Playfair Display;
+    letter-spacing: 2.16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+.needHelp h1::after {
+    position: absolute;
+    content: " ";
+    width: 200px;
+    height: 4px;
+    background-color: white;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 5px;
+}
+
+.needHelp h6{
+    color: #ffffff;
+    font: normal normal normal 20px/35px Josefin Sans;
+    letter-spacing: 0px;
+    padding: 30px 0;
+}
+
+.needHelp a{
+    font: normal normal normal 18px/22px Josefin Sans;
+    letter-spacing: 0px;
+    color: white;
+    padding: 8px 30px 5px;
+    border: 2px solid white;
+    border-radius: 23px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+
+.needHelp h1 {
+    font: normal normal normal 32px/32px Playfair Display;
+    padding: 40px 0 20px 0;
+}
+
+
+
+
+
+.needHelp h6 {
+    font: normal normal normal 17px/35px Josefin Sans;
+    padding: 20px 0;
+}
+
+
+
+
+}

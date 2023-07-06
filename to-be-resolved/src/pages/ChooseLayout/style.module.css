@@ -1,0 +1,44 @@
+.MainStepsWrap{
+    background-color: #1D1D1D;
+    padding: 50px 0 100px 0;
+}
+
+.MainStepsWrap h1{
+    text-align: center;
+    font: normal normal normal 55px/74px Playfair Display;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding: 10px 0;
+}
+
+
+.MainStepsWrap h2 {
+    text-align: center;
+    font: normal normal normal 27px/31px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding: 20px 0 40px;
+}
+
+
+.MainStepsWrap h2 span {
+    padding: 5px 18px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    font: normal normal normal 30px/37px Montserrat;
+    color: #000000;
+    margin-right: 20px;
+}
+
+
+.innerSizes{
+    padding: 15px;
+}
+
+
+
+.innerSizes img{
+    width: 100%;
+    transition: 0.5s;
+}

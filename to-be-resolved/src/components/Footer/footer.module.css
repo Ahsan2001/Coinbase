@@ -1,0 +1,115 @@
+footer.footer_main {
+    background-image: url(../../assets/images/footer-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 40px 0 10px 0;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: #4a483c73;
+}
+
+.footer_logo{
+    font: normal normal normal 40px/48px Josefin Sans !important;
+    letter-spacing: 10.8px !important;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer_para{
+    font: normal normal normal 19px/23px Josefin Sans !important;
+    letter-spacing: 0px;
+    color: #ffffff;
+    padding: 20px 0 40px;
+    text-shadow: 2px 2px 6px rgb(0 0 0);
+}
+
+.footer_menu a{
+    font: normal normal normal 18px/22px Josefin Sans !important; 
+    letter-spacing: 0px;
+    margin: 10px 20px;
+    padding-bottom: 5px;
+    text-shadow: 2px 2px 6px rgb(0 0 0);
+    color: #ffffff;
+    transition: .3s all ease;
+    position: relative;
+    top: 0;
+}
+
+
+
+
+
+
+.follow{
+    font: normal normal normal 25px/55px Playfair Display !important ;
+    letter-spacing: 1.25px !important;
+    color: #ffffff;
+    padding: 20px 0 10px !important;
+}
+
+.copyright{
+    font: normal normal 200 15px/23px Poppins !important;
+    letter-spacing: 0px;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+
+.social_icons a {
+    color: #fff;
+    padding: 10px !important;
+    transition: .3s all ease;
+    position: relative;
+    top: 0;
+}
+
+.social_icons a:hover
+{
+    top: -10px;
+    font-weight: 600;
+    color: rgb(228, 228, 228) !important;; 
+}
+
+
+
+
+.footer_menu a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+
+
+.footer_menu a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .footer_menu,
+    .footer_para{
+        width: 90%;
+        margin: 0 auto !important;
+    }
+
+    .footer_para{
+        line-height: 30px !important;
+    }
+
+    .footer_menu a{
+        line-height: 30px !important;
+        margin: 0px 10px !important;
+    }
+}

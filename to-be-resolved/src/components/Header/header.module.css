@@ -1,0 +1,292 @@
+header{
+    box-shadow: none !important;
+}
+
+.web_header_main{
+    background-color: rgb(255, 255, 255) !important;
+    position: relative !important;
+}
+
+.header_mainWrap{   
+    position: relative !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: #000 !important;
+    padding: 0 !important;
+}
+
+
+.web_header_main .container{
+    margin: 0 auto !important;
+}
+
+a.login_users_text_link{
+    color: #2E2E2E;
+    font-size: 16px;
+    border: 1px solid #2E2E2E;
+    border-radius: 27px;
+    font-family: 'Josefin Sans';
+    text-transform:capitalize   ;
+    font-weight: 500;
+    padding: 5px 40px;
+    line-height: 1.75;
+    margin: 0 0px 0 10px;
+    transition: 0.5s;
+}
+
+
+a.login_users_text_link:hover{
+    background-color: #2E2E2E;
+    color: #fff;
+}
+
+.login_users_text{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 5px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+a.header_icons_links img{
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+button.header_icons_links{
+    background-color: #7A7554;
+    color: white;
+    border-radius: 50%;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin-left: 10px;
+    padding: 6px 6px 5px 8px !important;
+    min-width: 0px !important;
+    line-height: initial !important;
+    height: initial !important;
+}
+
+.menuBtn{
+    text-transform: capitalize !important;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Josefin Sans';
+    font-weight: 500;
+}
+
+a.menuBtnRegister{
+   text-transform: capitalize !important;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Josefin Sans';
+    font-weight: 500;
+    position: relative;
+}
+
+
+
+
+
+a.custom_menuBtn{
+    color: #7A7554 !important;
+    text-align: center;
+    border-bottom: 0;
+    padding: 0 !important;
+    transition: 0.5s;
+}
+
+
+
+
+.header_main_menu_Wrap a{
+    color: #2E2E2E;
+    font-size: 16px;
+    font-family: 'Josefin Sans';
+    margin: 0 10px;
+    position: relative;    
+}
+
+a.menuBtnRegister:after,
+.header_main_menu_Wrap a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: -5px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #7A7554;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+
+a.menuBtnRegister:hover:after,
+.header_main_menu_Wrap a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+
+.header_main_menu_Wrap{
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+.mobile_header_main{
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.mobile_header_main img{
+    width: 200px !important;
+}
+
+.mobile_header_main svg{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+
+
+.header_main_menu_Wrap_Mobile{
+    position: relative;
+    background: #000000;
+    width: 100%;
+    color: #fff;
+    height: 100vh;
+}
+
+.mainMenuMobile a{
+    color: #fff;
+    font-size: 1.5em;
+    font-family: 'Josefin Sans';
+    margin: 10px 0;
+    position: relative;
+    padding: 10px 0;
+    text-transform: capitalize;
+}
+
+.header_main_menu_Wrap_Mobile .closeBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+.mainMenuMobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+   
+}
+
+
+.mainMenuMobile a span{
+    font-size: 14px;
+    color: #7A7554;
+    font-weight: 700;
+}
+
+
+
+.login_users_text a{
+    position: relative;
+}
+
+.login_users_text a span{
+    background: #1BD214;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 10px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo_main img{
+    width: 100%;
+}
+
+
+
+
+
+
+@media (max-width: 1380px) { 
+    a.login_users_text_link{
+        margin: 0 0px 0 3px;
+    }
+}
+@media (max-width: 1268px) { 
+    a.login_users_text_link{
+        padding: 4px 28px;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 1200px) {  
+    .header_main_menu_Wrap a{
+        font-size: 14px;
+        margin: 0 8px;
+    }
+    a.menuBtnRegister{
+        font-size: 14px;
+    }
+
+    a.login_users_text_link{
+        font-size: 14px;
+        /* padding: 5px 40px; */
+        margin: 0 0px 0 3px;
+    }
+    
+
+
+}
+
+@media (max-width: 992px) { 
+
+
+    a.login_users_text_link{
+     padding: 2px 22px;
+    }
+
+ }
+
+@media (max-width: 768px) {  }
+
+@media (max-width: 576px) {  }
