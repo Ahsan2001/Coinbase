@@ -3,6 +3,7 @@ const User = require("../../models/user");
 const bcrypt = require('bcryptjs');
 const UserDto = require("../../dto/user");
 const JWTService = require("../../services/JWT");
+const RefreshToken = require("../../models/token")
 
 
 const authController = {
@@ -63,7 +64,8 @@ const authController = {
             accessToken = JWTService.signAccessToken({ _id: user._id }, "30m");
 
             refreshToken = JWTService.signRefreshToken({ _id: user._id }, "60m");
-        } catch (error) {
+        }
+        catch (error) {
             return next(error);
         }
 
@@ -83,7 +85,7 @@ const authController = {
 
 
         const userDTO = new UserDto(user)
-        return res.status(201).json({ user: userDTO })
+        return res.status(201).json({ user: userDTO, auth: true })
 
     },
     async login(req, res, next) {
@@ -127,6 +129,20 @@ const authController = {
         const accessToken = JWTService.signAccessToken({ _id: user._id }, "30m");
         const refreshToken = JWTService.signRefreshToken({ _id: user._id }, "60m");
 
+
+        // update refresh token in database
+        try {
+            await RefreshToken.updateOne({
+                _id: user._id
+            },
+                { token: refreshToken },
+                { upsert: true }
+            )
+        } catch (error) {
+            return next(error)
+        }
+
+
         // store refresh token in db
         await JWTService.storeRefreshToken(refreshToken, user._id);
 
@@ -142,7 +158,24 @@ const authController = {
         });
 
         const userDTO = new UserDto(user)
-        return res.status(200).json({ user: userDTO })
+        return res.status(200).json({ user: userDTO, auth: true })
+    },
+    async logout(req, res, next) {
+        const { refreshToken } = req.cookies;
+
+        // delete token from database
+        try {
+            await RefreshToken.deleteOne({ token: refreshToken });
+        } catch (error) {
+            return next(error)
+        }
+
+        // delete cookies
+        res.clearCookie("accessToken");
+        res.clearCookie("refreshToken");
+
+        // get response
+        res.status(200).json({ user: null, auth: false });
     }
 }
 
