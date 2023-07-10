@@ -1,0 +1,17 @@
+const createBlogSchema = require("../schema/blog");
+
+const blogController = {
+
+    async create(req,res,next){
+        const {error} = createBlogSchema.validate(req.body)
+
+
+    },
+    async update(req,res,next){},
+    async getAll(req,res,next){},
+    async getById(req,res,next){},
+    async delete(req,res,next){},
+
+}
+
+module.exports = blogController;
