@@ -1,4 +1,4 @@
-const {createBlogSchema, getByIdSchema} = require("../schema/blog");
+const {createBlogSchema, getByIdSchema, updateBlogSchema} = require("../schema/blog");
 const fs = require("fs");
 const Blog = require("../models/blog");
 const { BACKEND_SERVER_PATH } = require("../config");
@@ -12,7 +12,6 @@ const blogController = {
 
     async create(req,res,next){
         const {error} = createBlogSchema.validate(req.body)
-
 
         if(error){
             return next(error);
@@ -37,7 +36,7 @@ const blogController = {
                 title,
                 author,
                 content,
-                photo : `${BACKEND_SERVER_PATH}/storage/${imagePath}`
+                photoPath : `${BACKEND_SERVER_PATH}/storage/${imagePath}`
             })
 
             await newBlog.save()
@@ -87,7 +86,55 @@ const blogController = {
         res.status(200).json({blog: blogDto})
 
     },
-    async update(req,res,next){},
+    async update(req,res,next){
+      
+        const { error } = updateBlogSchema.validate(req.body);
+
+        const { title, content, author, blogId, photo } = req.body;
+    
+        // delete previous photo
+        // save new photo
+    
+        let blog;
+    
+        try {
+          blog = await Blog.findOne({ _id: blogId });
+        } catch (error) {
+          return next(error);
+        }
+    
+        if (photo) {
+          let previousPhoto = blog.photoPath;
+    
+          previousPhoto = previousPhoto.split("/").at(-1);
+    
+          // delete photo
+          fs.unlinkSync(`storage/${previousPhoto}`);
+            const buffer = Buffer.from(photo.replace(/^data:image\/(png|jpg|jpeg);base64,/, ''), "base64")
+            const imagePath = `${Date.now()}-${author}.png`;
+    
+            try {
+                fs.writeFileSync(`storage/${imagePath}`, buffer)
+            } catch (error) {
+                return next(error);
+            }
+
+            await Blog.updateOne({ _id: blogId}, 
+                {
+                    title, 
+                    content, 
+                    photoPath: `${BACKEND_SERVER_PATH}/storage/${imagePath}`
+                }
+            )
+        }
+
+        else {
+            await Blog.updateOne({ _id: blogId }, { title, content });
+          }
+      
+        return res.status(200).json({ message: "blog updated!" });
+
+    },
     async delete(req,res,next){},
 
 }

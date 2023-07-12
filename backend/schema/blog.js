@@ -11,11 +11,25 @@ const createBlogSchema =  Joi.object ({
 })
 
 
-const getByIdSchema = Joi.object ( {
+const getByIdSchema = Joi.object ({
     id: Joi.string().regex(mongodbIdPattern).required()
 })
 
+
+
+const updateBlogSchema = Joi.object ({
+    title: Joi.string().required(),
+    content: Joi.string().required(),
+    author: Joi.string().regex(mongodbIdPattern).required(),
+    blogID: Joi.string().regex(mongodbIdPattern).required(),
+    photo: Joi.string(),
+})
+
+
+
+
 module.exports = {
     createBlogSchema,
-    getByIdSchema
+    getByIdSchema,
+    updateBlogSchema
 };
