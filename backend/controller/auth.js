@@ -1,7 +1,7 @@
 const { userRegisterSchema, userLoginSchema } = require("../schema/auth");
 const User = require("../models/user");
 const bcrypt = require('bcryptjs');
-const UserDto = require("../dto/user");
+const UserDTO = require("../dto/user");
 const JWTService = require("../services/JWT");
 const RefreshToken = require("../models/token")
 
@@ -85,7 +85,7 @@ const authController = {
         });
 
 
-        const userDTO = new UserDto(user)
+        const userDTO = new UserDTO(user)
         return res.status(201).json({ user: userDTO, auth: true })
 
     },
@@ -158,7 +158,7 @@ const authController = {
             httpOnly: true,
         });
 
-        const userDTO = new UserDto(user)
+        const userDTO = new UserDTO(user)
         return res.status(200).json({ user: userDTO, auth: true })
     },
     async logout(req, res, next) {
@@ -236,7 +236,7 @@ const authController = {
 
         const user = await User.findOne({ _id: id });
 
-        const userDto = new UserDto(user);
+        const userDto = new UserDTO(user);
 
         return res.status(200).json({ user: userDto, auth: true })
     }

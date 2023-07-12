@@ -6,7 +6,7 @@ const blogSchema = new Schema({
     title : {type: String, require: true},
     content : {type: String, require: true},
     photo : {type: String, require: true},
-    author : {type: mongoose.SchemaType.ObjectId, ref: "users"},
+    author : {type: mongoose.SchemaTypes.ObjectId, ref: "User"},
 }, 
 {
     timestamps: true
