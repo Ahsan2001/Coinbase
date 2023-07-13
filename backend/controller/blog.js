@@ -1,11 +1,9 @@
-const {createBlogSchema, getByIdSchema, updateBlogSchema} = require("../schema/blog");
+const {createBlogSchema, getByIdSchema, updateBlogSchema, deleteBlogSchema} = require("../schema/blog");
 const fs = require("fs");
 const Blog = require("../models/blog");
 const { BACKEND_SERVER_PATH } = require("../config");
 const BlogDTO = require("../dto/blog");
 const BlogDetailsDTO = require("../dto/blog-detail");
-
-
 
 
 const blogController = {
@@ -48,6 +46,7 @@ const blogController = {
         res.status(201).json({blog: blogBto})
 
     },
+
     async getAll(req,res,next){
         try {
             const blogs = await Blog.find({});
@@ -64,6 +63,7 @@ const blogController = {
             return next(error);
         }
     },
+
     async getById(req,res,next){
         const {error} = getByIdSchema.validate(req.params);
 
@@ -86,6 +86,7 @@ const blogController = {
         res.status(200).json({blog: blogDto})
 
     },
+
     async update(req,res,next){
       
         const { error } = updateBlogSchema.validate(req.body);
@@ -132,10 +133,24 @@ const blogController = {
             await Blog.updateOne({ _id: blogId }, { title, content });
           }
       
-        return res.status(200).json({ message: "blog updated!" });
+        return res.status(200).json({ message: "Blog Updated Successfully!" });
 
     },
-    async delete(req,res,next){},
+    
+    async delete(req,res,next){
+        const {error} = deleteBlogSchema.validate(req.body)
+
+        const {id} = req.params;
+
+        try {
+            await Blog.deleteOne({_id: id});
+        } catch (error) {
+            return next(error)
+        }
+
+        return res.status(200).json({ message: "Blog Deleted Successfully!"})
+
+    },
 
 }
 

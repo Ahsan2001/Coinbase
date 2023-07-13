@@ -89,6 +89,7 @@ const authController = {
         return res.status(201).json({ user: userDTO, auth: true })
 
     },
+    
     async login(req, res, next) {
 
         // validation user input with joi schema 
@@ -161,6 +162,7 @@ const authController = {
         const userDTO = new UserDTO(user)
         return res.status(200).json({ user: userDTO, auth: true })
     },
+
     async logout(req, res, next) {
         const { refreshToken } = req.cookies;
 
@@ -240,7 +242,6 @@ const authController = {
 
         return res.status(200).json({ user: userDto, auth: true })
     }
-
 
 }
 
