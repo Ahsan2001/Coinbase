@@ -4,7 +4,6 @@ class UserDTO {
         this.username = user.username;
         this.email = user.email;
         this.name = user.name;
-
     }
 }
 

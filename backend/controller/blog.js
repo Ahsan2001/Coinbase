@@ -4,7 +4,7 @@ const Blog = require("../models/blog");
 const { BACKEND_SERVER_PATH } = require("../config");
 const BlogDTO = require("../dto/blog");
 const BlogDetailsDTO = require("../dto/blog-detail");
-
+const Comment = require("../models/comment");
 
 const blogController = {
 
@@ -144,6 +144,7 @@ const blogController = {
 
         try {
             await Blog.deleteOne({_id: id});
+            await Comment.deleteMany({blog: id });
         } catch (error) {
             return next(error)
         }
