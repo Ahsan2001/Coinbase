@@ -1,11 +1,36 @@
 .active {
-  color: #3861fb;
+  color: #ffffff;
   font-size: 22px;
   font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
 .inActive{
+  color: #ffffffc8;
   text-decoration: none;
   font-size: 22px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
+
+.header__logo img{
+  width: 60%;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header nav a{
+  padding: 0px 20px;
+
+}
+

@@ -1,12 +1,10 @@
 import Layout from "../../layout/index"
-
+import { PageTitle } from "../../utils";
 
 const Home:React.FC = () => {
-
-  document.title = "Home page here"; 
-  
   return (
     <Layout>
+       <PageTitle title="My Awesome App" />
         <div>home</div>
     </Layout>
   )

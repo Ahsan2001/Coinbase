@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import style from "./style.module.css";
+import { PageTitle } from "../../utils";
 const Error:React.FC = () => {
-  document.title = "Error 404 page here"; 
+
   return (
-      <div className={style.Error__page}>
-        <h1>Error 404 Page is not available or temporary down </h1>
+      <section className={style.Error__page}>
+        <PageTitle title="My Awesome App" />
+        <h1>Error 404 Page is not available or The webpage at might be temporarily down </h1>
         <Link to="/">Go to Home page</Link>
-      </div>
+      </section>
   )
 }
 
