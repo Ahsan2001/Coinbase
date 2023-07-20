@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                 <PersonIcon fontSize="large" /> Logout
               </NavLink>
               :
-              <NavLink to="/signin"
+              <NavLink to="/login"
                 className={({ isActive }) => isActive ? style.active : style.inActive} >
                 <PersonIcon fontSize="large" /> Login
               </NavLink>

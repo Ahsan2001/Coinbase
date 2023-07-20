@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Error } from '../pages';
+import { Home, Error, Login } from '../pages';
 import ProtectedRoute from './protectedRoutes';
 
 
@@ -31,7 +31,7 @@ const WebRoutes: React.FC = () => {
           } />
 
         <Route path="/signup" element={<h1>Sign Up </h1>} />
-        <Route path="/signin" element={<h1>Sign In </h1>} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
