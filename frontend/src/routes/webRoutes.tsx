@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Error, Login } from '../pages';
+import { Home, Error, Login, Signup } from '../pages';
 import ProtectedRoute from './protectedRoutes';
+import { useSelector } from 'react-redux';
 
 
 
 const WebRoutes: React.FC = () => {
 
-
-  const isAuthenticated = false;
-
+  const isAuthenticated =  useSelector((state: any) => state.user.auth);
 
   return (
     <BrowserRouter>
@@ -30,7 +29,7 @@ const WebRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-        <Route path="/signup" element={<h1>Sign Up </h1>} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>

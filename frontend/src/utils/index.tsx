@@ -9,4 +9,4 @@ export const PageTitle: React.FC<TitleProps> = (props) => {
   return null;
 };
 
-export const REACT_APP_INTERNAL_API_PATH = 'http://localhost:4000';
+export const REACT_APP_INTERNAL_API_PATH = 'http://localhost:4000/';

@@ -5,8 +5,11 @@ import Grid from '@mui/material/Grid';
 import logo from "../../assets/logo.png"
 import { Container } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
+import { useSelector } from 'react-redux';
 
-const isAuthenticated: Boolean = false;
+
+
+
 
 const pages = [
   { path: '/', label: 'Home' },
@@ -17,6 +20,8 @@ const pages = [
 ];
 
 const Navbar: React.FC = () => {
+
+  const isAuthenticated = useSelector((state: any) => state.user.auth)
 
   return (
     <header>
@@ -42,12 +47,12 @@ const Navbar: React.FC = () => {
             {isAuthenticated ?
               <NavLink to="/logout"
                 className={({ isActive }) => isActive ? style.active : style.inActive} >
-                <PersonIcon fontSize="large" /> Logout
+                <PersonIcon  /> Logout
               </NavLink>
               :
               <NavLink to="/login"
                 className={({ isActive }) => isActive ? style.active : style.inActive} >
-                <PersonIcon fontSize="large" /> Login
+                <PersonIcon  /> Login
               </NavLink>
             }
           </Grid>
