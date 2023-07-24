@@ -12,7 +12,7 @@ import Layout from "../../layout"
 import { PageTitle } from "../../utils/index"
 import style from "./style.module.css"
 import loginSchema from "../../schemas/loginSchema";
-import { LoginApi } from "../../api/internal.jsx"
+import { LoginApi } from "../../api/internal.js"
 import { setUser } from "../../redux/userSlice.js"
 import { Alert } from "../../components/index.js";
 import { toast } from "react-toastify";
@@ -24,7 +24,6 @@ interface LoginFormValues {
 }
 
 const Login: React.FC = () => {
-
 
     const [showHidePassword, setShowHidePassword] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -40,9 +39,6 @@ const Login: React.FC = () => {
 
         const response:any = await LoginApi(data);
 
-
-        console.log(response, "response")
-
         if (response.status === 200) {
          
             const user = {
@@ -56,7 +52,6 @@ const Login: React.FC = () => {
             setLoading(false)
             toast.success("Login Successfully");
 
-
             setTimeout(()=> {
                 navigate('/')
             }, 2000)
@@ -64,7 +59,7 @@ const Login: React.FC = () => {
 
         } else  {
             setLoading(false)
-            toast.error("Wrong crediential");
+            toast.error(response.response.data.message);
         }
 
     }
@@ -85,8 +80,6 @@ const Login: React.FC = () => {
             action.resetForm()
         },
     })
-
-  
 
     return (
         <Layout>

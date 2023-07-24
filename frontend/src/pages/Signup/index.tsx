@@ -12,7 +12,7 @@ import Layout from "../../layout"
 import { PageTitle } from "../../utils/index"
 import style from "./style.module.css"
 import SignupSchema from "../../schemas/signupSchema.js";
-import { SignUpApi } from "../../api/internal.jsx"
+import { SignUpApi } from "../../api/internal.js"
 import { setUser } from "../../redux/userSlice.js"
 import { toast } from "react-toastify";
 import SpinnerLoader from "../../components/ButtonLoader/index.js";
@@ -25,7 +25,6 @@ interface SignupFormValues {
     password: string;
     confirmPassword: string;
 }
-
 
 const Signup: React.FC = () => {
 
@@ -44,7 +43,6 @@ const Signup: React.FC = () => {
             email: values.email,
         };
 
-
         const response: any = await SignUpApi(data);
 
         if (response.status === 201) {
@@ -57,19 +55,16 @@ const Signup: React.FC = () => {
             };
 
             dispatch(setUser(user));
-
             setLoading(false)
             toast.success("Account Created Successfully");
 
-
             setTimeout(() => {
-                navigate('/login')
+                navigate('/')
             }, 2000)
-
 
         } else {
             setLoading(false)
-            toast.error("Something went wrong");
+            toast.error(response.response.data.message);
         }
     };
 

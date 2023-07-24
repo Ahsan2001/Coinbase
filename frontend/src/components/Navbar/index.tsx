@@ -3,11 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import style from './style.module.css';
 import Grid from '@mui/material/Grid';
 import logo from "../../assets/logo.png"
-import { Container } from '@mui/material';
+import { Container,Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import { useSelector } from 'react-redux';
-
-
+import { LogoutApi } from '../../api/internal';
+import { useDispatch } from 'react-redux';
+import { resetUser } from '../../redux/userSlice';
 
 
 
@@ -22,6 +23,11 @@ const pages = [
 const Navbar: React.FC = () => {
 
   const isAuthenticated = useSelector((state: any) => state.user.auth)
+  const dispatch = useDispatch();
+  const handleLogout = async() => {
+    await LogoutApi();
+    dispatch(resetUser())
+  }
 
   return (
     <header>
@@ -45,10 +51,9 @@ const Navbar: React.FC = () => {
 
           <Grid item xs={2} sx={{ alignSelf: 'center' }}>
             {isAuthenticated ?
-              <NavLink to="/logout"
-                className={({ isActive }) => isActive ? style.active : style.inActive} >
+              <Button className={style.logoutBTN} onClick={handleLogout}>
                 <PersonIcon  /> Logout
-              </NavLink>
+              </Button>
               :
               <NavLink to="/login"
                 className={({ isActive }) => isActive ? style.active : style.inActive} >

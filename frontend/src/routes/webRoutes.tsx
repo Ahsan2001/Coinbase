@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Error, Login, Signup } from '../pages';
+import { Home, Error, Login, Signup, CryptoCurrency } from '../pages';
 import ProtectedRoute from './protectedRoutes';
 import { useSelector } from 'react-redux';
 
@@ -13,7 +13,7 @@ const WebRoutes: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cryptocurrency" element={<h1>cryptocurrency </h1>} />
+        <Route path="/cryptocurrency" element={<CryptoCurrency />} />
  
         <Route path="/blogs"
           element={

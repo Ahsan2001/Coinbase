@@ -21,8 +21,6 @@ export const LoginApi = async (data) => {
 };
 
 
-
-
 export const SignUpApi = async (data) => {
   let response;
 
@@ -32,5 +30,16 @@ export const SignUpApi = async (data) => {
     return error;
   }
 
+  return response;
+};
+
+
+export const LogoutApi = async () => {
+  let response;
+  try {
+    response = await api.post("/logout");
+  } catch (error) {
+    return error;
+  }
   return response;
 };

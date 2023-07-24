@@ -3,3 +3,4 @@ export { default as Blogs } from './Blogs/index';
 export { default as Login } from "./Login/index"
 export { default as Signup } from "./Signup/index"
 export { default as Error } from "./Error_404/index";
+export { default as CryptoCurrency } from "./Home copy/index"; 
