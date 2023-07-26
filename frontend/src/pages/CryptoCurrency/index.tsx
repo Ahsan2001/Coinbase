@@ -16,8 +16,8 @@ interface CrypotoCurrency {
   image: string;
   name: string;
   symbol: string;
-  lastPrice: any;
-  priceChange: string;
+  lastPrice: number;
+  priceChange: number;
 
   // Add other properties of an crypto if necessary
 }
@@ -67,7 +67,6 @@ const CryptoCurrency: React.FC = () => {
                 <thead>
                   <tr className={style.head}>
                     <th>#</th>
-                    <th>Coin</th>
                     <th>Symbol</th>
                     <th> Price</th>
                     <th>Last 24h Price</th>
@@ -77,11 +76,6 @@ const CryptoCurrency: React.FC = () => {
                   {crypto.map((coin,ind) => (
                     <tr key={ind}  className={style.tableRow}>
                       <td>{ind}</td>
-                      <td>
-                        <div className={style.logo}>
-                          <img src={coin.image} width={40} height={40} /> {coin.name}
-                        </div>
-                      </td>
                       <td>
                         <div className={style.symbol}>{coin.symbol}</div>
                       </td>
