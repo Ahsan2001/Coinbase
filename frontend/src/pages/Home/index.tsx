@@ -26,12 +26,8 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     (async function newsApiCalling() {
-      try {
-        const response: any = await GetNewsApi();
-        setArticles(response);
-      } catch (error) {
-        console.log(error, "Error fetching articles:")
-      }
+      const response: any = await GetNewsApi();
+      setArticles(response);
     })();
 
     return () => {
@@ -47,7 +43,11 @@ const Home: React.FC = () => {
 
 
   if (articles.length === 0){
-    return <PageLoader />
+    return (
+    <Layout>
+      <PageLoader />
+    </Layout>
+    )
   }
 
   return (

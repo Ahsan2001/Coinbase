@@ -44,7 +44,11 @@ const CryptoCurrency: React.FC = () => {
 
 
   if (crypto.length === 0) {
-    return <PageLoader />
+    return (
+    <Layout>
+       <PageLoader />
+    </Layout>
+    )
   }
 
 

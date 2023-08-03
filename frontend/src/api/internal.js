@@ -10,6 +10,10 @@ const api = axios.create({
   },
 });
 
+
+
+// Auth api 
+
 export const LoginApi = async (data) => {
   let response;
   try {
@@ -19,7 +23,6 @@ export const LoginApi = async (data) => {
   }
   return response;
 };
-
 
 export const SignUpApi = async (data) => {
   let response;
@@ -33,7 +36,6 @@ export const SignUpApi = async (data) => {
   return response;
 };
 
-
 export const LogoutApi = async () => {
   let response;
   try {
@@ -43,3 +45,28 @@ export const LogoutApi = async () => {
   }
   return response;
 };
+
+
+
+// Blog api 
+
+export const BlogsApi = async () => {
+  let response;
+  try {
+    response = await api.get("/blog/all");
+  } catch (error) {
+    return error;
+  }
+  return response;
+}
+
+
+export const SubmitBlogApi = async (data) => {
+  let response;
+  try {
+    response = await api.post("/blog", data);
+  } catch (error) {
+    return error
+  }
+  return response;
+}
