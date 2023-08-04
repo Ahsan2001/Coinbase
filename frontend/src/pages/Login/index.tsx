@@ -31,7 +31,9 @@ const Login: React.FC = () => {
     const navigate = useNavigate ();
 
     const handleLogin = async () => {
+
         setLoading(true)
+
         const data = {
             username: values.username,
             password: values.password
@@ -40,7 +42,7 @@ const Login: React.FC = () => {
         const response:any = await LoginApi(data);
 
         if (response.status === 200) {
-         
+
             const user = {
                 _id: response.data.user._id,
                 username: response.data.user.username,
@@ -48,15 +50,13 @@ const Login: React.FC = () => {
                 auth: response.data.auth,
             }
             dispatch(setUser(user));
-
             setLoading(false)
             toast.success("Login Successfully");
 
             setTimeout(()=> {
                 navigate('/')
             }, 2000)
-
-
+            
         } else  {
             setLoading(false)
             toast.error(response.response.data.message);

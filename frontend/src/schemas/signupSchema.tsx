@@ -1,7 +1,5 @@
 import * as yup from "yup";
 
-const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-
 const SignupSchema = yup.object().shape({
 
     name: yup.string().max(30).required("name is required"),
