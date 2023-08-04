@@ -55,7 +55,7 @@ const Login: React.FC = () => {
 
             setTimeout(()=> {
                 navigate('/')
-            }, 2000)
+            }, 1000)
             
         } else  {
             setLoading(false)

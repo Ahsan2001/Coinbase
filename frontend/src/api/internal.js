@@ -60,11 +60,56 @@ export const BlogsApi = async () => {
   return response;
 }
 
+export const BlogApi = async (id) => {
+  let response;
+  try {
+    response = await api.post(`/blog/${id}`);
+  } catch (error) {
+    return error
+  }
+  return response;
+}
 
 export const SubmitBlogApi = async (data) => {
   let response;
   try {
     response = await api.post("/blog", data);
+  } catch (error) {
+    return error
+  }
+  return response;
+}
+
+export const DeleteBlogApi = async (id) => {
+  let response;
+  try {
+    response = await api.post(`/blog/${id}`);
+  } catch (error) {
+    return error
+  }
+  return response;
+}
+
+
+// Comment api
+
+export const GetCommentBlogApi = async (id) => {
+  let response;
+  try {
+    response = await api.get(`/comment/${id}`, {
+      ValidityState: false
+    });
+
+  } catch (error) {
+    return error
+  }
+  return response;
+}
+
+export const PostCommentBlogApi = async (data) => {
+  let response;
+  try {
+    response = await api.post(`/comment`, data);
   } catch (error) {
     return error
   }

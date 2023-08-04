@@ -7,6 +7,8 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ isAuth, children }) => {
+
+
   if (isAuth) {
     return children;
   } else {

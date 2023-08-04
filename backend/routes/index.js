@@ -26,9 +26,8 @@ router.delete('/blog/:id', auth, blogController.delete) // Delete
 
 
 // comment routes
-
+router.get('/comment/:id', auth, CommentController.getById)  // get by id  
 router.post('/comment', auth, CommentController.create)      // create
-router.get('/comment/:id', auth, CommentController.getById)  // get by id 
 
 
 

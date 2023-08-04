@@ -3,11 +3,14 @@
     margin-bottom: 30px;
     margin-top: 20px;
 }
-
+.blog__Box{
+    text-align: center;
+}
 
 .blog__Box img{
-    width: 100%;
-    height: 300px;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 300px;
 }
 
 .blog__Box img:hover{
