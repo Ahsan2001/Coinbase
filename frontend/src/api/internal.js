@@ -127,16 +127,34 @@ export const PostCommentBlogApi = async (data) => {
 }
 
 
-
-
-
-
-
-
-
-
-
 // Refresh Token
+// api.interceptors.response.use(
+//   (config) => config,
+//   async (error) => {
+//     const originalReq = error.config;
+
+//     if (
+//       (error.response.status === 401 || error.response.status === 500) &&
+//       originalReq &&
+//       !originalReq._isRetry
+//     ) {
+//       originalReq.isRetry = true;
+
+//       try {
+//         await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`, {
+//           withCredentials: true,
+//         });
+
+//         return api.request(originalReq);
+//       } catch (error) {
+//         return error;
+//       }
+//     }
+//   }
+// );
+
+
+
 
 
 api.interceptors.response.use(
@@ -149,7 +167,7 @@ api.interceptors.response.use(
       originalReq &&
       !originalReq._isRetry
     ) {
-      originalReq.isRetry = true;
+      originalReq._isRetry = true;
 
       try {
         await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`, {
@@ -157,9 +175,16 @@ api.interceptors.response.use(
         });
 
         return api.request(originalReq);
-      } catch (error) {
-        return error;
+      } catch (refreshError) {
+        // Retry failed even after refresh attempt, handle the original error
+        return Promise.reject(error);
       }
+    } else {
+      // Handle non-retryable errors by displaying error messages
+      // Use toast.error to show appropriate error messages
+      // You can access error.response.data or error.message to extract details
+      toast.error("An error occurred: " + (error.response.data.message || error.message));
+      return Promise.reject(error);
     }
   }
 );

@@ -49,3 +49,7 @@ header nav  a svg{
   font-size: 15px;
 }
 
+
+.logoutBTN{
+  gap: 5px;
+}

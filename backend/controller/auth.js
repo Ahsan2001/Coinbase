@@ -12,6 +12,7 @@ const authController = {
 
         // validation user input with joi schema 
         const { error } = userRegisterSchema.validate(req.body)
+        
         if (error) {
             return next(error)
         }

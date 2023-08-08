@@ -37,44 +37,35 @@ const EditBlog: React.FC = () => {
 
     const submitHandler = async () => {
         setLoading(true)
-    
-
-
-
-
         let data;
         if (photo.includes("http")) {
-          data = {
-            author,
-            title,
-            content,
-            blogId,
-          };
+            data = {
+                author,
+                title,
+                content,
+                blogId,
+            };
         } else {
-          data = {
-            author,
-            title,
-            content,
-            photo,
-            blogId,
-          };
+            data = {
+                author,
+                title,
+                content,
+                photo,
+                blogId,
+            };
         }
-    
 
         const response: any = await UpdateBlogApi(data);
-        if (response.status === 201) {
+
+        if (response.status === 200) {
             setTitle("")
             setContent("")
             setPhoto("")
             setLoading(false)
-            toast.success("Updated Blog Successfully")
+            toast.success(response.data.message)
             setTimeout(() => {
                 navigate("/blogs")
             }, 1000)
-
-        } else {
-            setLoading(false)
-            toast.error(response.response.data.message);
         }
     };
 
@@ -119,13 +110,13 @@ const EditBlog: React.FC = () => {
                                         onChange={getPhoto}
                                     />
                                 </div>
-                        
+
                                 <Box className={style.photo_Box}>
-                                    {photo !== "" ? <img src={photo}  /> : ""}
+                                    {photo !== "" ? <img src={photo} /> : ""}
                                 </Box>
                                 <Button className={style.btn_wrap} variant="outlined" onClick={submitHandler} >
                                     {
-                                        loading ? <SpinnerLoader />  :  `Update Blog`
+                                        loading ? <SpinnerLoader /> : `Update Blog`
                                     }
                                 </Button>
                             </form>

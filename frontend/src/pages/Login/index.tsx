@@ -39,10 +39,9 @@ const Login: React.FC = () => {
             password: values.password
         }
 
-        const response:any = await LoginApi(data);
+        const response: any = await LoginApi(data);
 
         if (response.status === 200) {
-
             const user = {
                 _id: response.data.user._id,
                 username: response.data.user.username,

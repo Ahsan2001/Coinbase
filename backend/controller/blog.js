@@ -1,10 +1,26 @@
 const {createBlogSchema, getByIdSchema, updateBlogSchema, deleteBlogSchema} = require("../schema/blog");
 const fs = require("fs");
 const Blog = require("../models/blog");
-const { BACKEND_SERVER_PATH } = require("../config");
+const { CLOUD_NAME, API_KEY, API_SECRET } = require("../config");
 const BlogDTO = require("../dto/blog");
 const BlogDetailsDTO = require("../dto/blog-detail");
 const Comment = require("../models/comment");
+const cloudinary = require("cloudinary").v2;
+
+
+
+
+
+
+// Configuration
+cloudinary.config({
+    cloud_name: CLOUD_NAME,
+    api_key: API_KEY,
+    api_secret: API_SECRET,
+});
+
+
+
 
 const blogController = {
 
@@ -17,13 +33,8 @@ const blogController = {
 
         const {title, author, content, photo} = req.body;
 
-
-        const buffer = Buffer.from(photo.replace(/^data:image\/(png|jpg|jpeg);base64,/, ''), "base64")
-
-        const imagePath = `${Date.now()}-${author}.png`;
-
         try {
-            fs.writeFileSync(`storage/${imagePath}`, buffer)
+            response = await cloudinary.uploader.upload(photo);
         } catch (error) {
             return next(error);
         }
@@ -34,7 +45,7 @@ const blogController = {
                 title,
                 author,
                 content,
-                photoPath : `${BACKEND_SERVER_PATH}/storage/${imagePath}`
+                photoPath: response.url,
             })
 
             await newBlog.save()
@@ -89,18 +100,11 @@ const blogController = {
 
     async update(req,res,next){
 
-
-      
         const { error } = updateBlogSchema.validate(req.body);
 
-   
         const { title, content, author, blogId, photo } = req.body;
     
-        // delete previous photo
-        // save new photo
-    
         let blog;
-
 
         try {
             blog = await Blog.findOne({ _id: blogId });
@@ -109,17 +113,10 @@ const blogController = {
           }
       
         if (photo) {
-            let previousPhoto =  blog.photoPath;
-    
-            previousPhoto = previousPhoto.split("/").at(-1);
-    
-          // delete photo
-          fs.unlinkSync(`storage/${previousPhoto}`);
-            const buffer = Buffer.from(photo.replace(/^data:image\/(png|jpg|jpeg);base64,/, ''), "base64")
-            const imagePath = `${Date.now()}-${author}.png`;
-    
+   
+            let response;
             try {
-                fs.writeFileSync(`storage/${imagePath}`, buffer)
+                response = await cloudinary.uploader.upload(photo);
             } catch (error) {
                 return next(error);
             }
@@ -128,7 +125,7 @@ const blogController = {
                 {
                     title, 
                     content, 
-                    photoPath: `${BACKEND_SERVER_PATH}/storage/${imagePath}`
+                    photoPath: response.url,
                 }
             )
         }

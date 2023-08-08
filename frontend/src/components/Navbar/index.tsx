@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
 
           <Grid item xs={2} sx={{ alignSelf: 'center' }}>
             {isAuthenticated ?
-              <Button className={style.logoutBTN} onClick={handleLogout}>
+              <Button variant='contained' className={style.logoutBTN} onClick={handleLogout}>
                 <PersonIcon  /> Logout
               </Button>
               :
