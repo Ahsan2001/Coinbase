@@ -1,14 +1,11 @@
 .comment {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    margin: 10px;
-    border-bottom: 2px solid #5b5b5b;
+    padding: 15px 10px;
   }
   
-  .header div {
-    margin: 2px 0;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .author {
@@ -19,11 +16,14 @@
   
   .date {
     font-size: 12px;
-    color: #c4c5c5;
+    color: #eaff08;
     font-weight: bold;
   }
   
   .commentText {
     font-size: 18px;
     padding: 5px 0;
+    color: #62b767;
+    font-weight: 600;
+    font-style: italic;
   }

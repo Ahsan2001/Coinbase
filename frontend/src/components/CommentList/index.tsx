@@ -12,8 +12,8 @@ interface CommentProps {
     
 
 
-
 const CommentList: React.FC<CommentProps> = ({ comments }) => {
+
   return (
     <div className={style.commentListWrapper}>
       <div className={style.commentList}>

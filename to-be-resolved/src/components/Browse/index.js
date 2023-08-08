@@ -1,7 +1,0 @@
-export { default as NatureTabs } from "./NatureTabs"
-export { default as BrowseImage } from "./BrowseImages"
-export { default as BrowseNaturalTours } from "./BrowseInnerTours/browseNaturalTours.jsx"
-export { default as BrowseNwCollageTour } from "./BrowseInnerTours/browseNwCollageTour.jsx"
-export { default as BrowseImagesOfInterest } from "./BrowseInnerTours/browseImagesOfInterest.jsx"
-export { default as NwCollageTourImages } from "./NwCollageTour"
-export { default as InterestImagesTour } from "./InterestOfImagesTour"

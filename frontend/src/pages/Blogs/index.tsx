@@ -17,6 +17,7 @@ interface Blog {
 
 const Blogs: React.FC = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const [blog, setBlog] = useState<Blog[]>([]);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Blogs: React.FC = () => {
       const response: any = await BlogsApi()
       if (response.status === 200) {
         setBlog(response.data.blogs)
+        setIsLoading(false);
       }
     })()
     return () => {
@@ -31,7 +33,7 @@ const Blogs: React.FC = () => {
     }
   }, []);
 
-  if (blog.length === 0) {
+  if (isLoading) {
     return (
       <Layout>
         <PageLoader />
@@ -41,23 +43,31 @@ const Blogs: React.FC = () => {
 
   return (
     <Layout>
-      <PageTitle title="My Awesome App" />
+      <PageTitle title="Blogs Page" />
       <section>
-        <h1 className={style.heading_one}>Blogs Listing</h1>
-        <Container maxWidth="xl">
-          <Grid container spacing={4}>
-            {blog.map((item, ind) => {
-              return (
-                <Grid key={ind} item xs={12} sm={12} md={6} lg={4} p={2}>
-                  <Box className={style.blog__Box} onClick={ () =>  navigate(`/blog/${item._id}`)  }>
-                    <img src={item.photo} alt={item.author} />
-                    <h4>{item.title}</h4>
-                  </Box>
+        {blog.length === 0 ? (
+          <h1 className={style.heading_one}>No blogs available.</h1>
+        ) :
+          (
+            <>
+
+              <Container maxWidth="xl">
+                <h1 className={style.heading_one}>Blogs Listing</h1>
+                <Grid container spacing={4}>
+                  {blog.map((item, ind) => {
+                    return (
+                      <Grid key={ind} item xs={12} sm={12} md={6} lg={4}>
+                        <Box className={style.blog__Box} onClick={() => navigate(`/blog/${item._id}`)}>
+                          <img src={item.photo} alt={item.author} />
+                          <h4>{item.title}</h4>
+                        </Box>
+                      </Grid>
+                    );
+                  })}
                 </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
+              </Container>
+            </>
+          )}
       </section>
     </Layout>
   )

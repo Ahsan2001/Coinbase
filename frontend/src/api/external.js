@@ -3,7 +3,10 @@ import axios from "axios";
 import { NEWS_API_KEYS } from "../utils";
 
 
-const NEWS_API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEYS}`;
+// const NEWS_API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEYS}`;
+
+const NEWS_API_ENDPOINT = `https://saurav.tech/NewsAPI/top-headlines/category/business/us.json`
+
 
 const CRYPTO_API_ENDPOINT = `https://data.binance.com/api/v3/ticker/24hr`
 

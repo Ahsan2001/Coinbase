@@ -63,7 +63,7 @@ export const BlogsApi = async () => {
 export const BlogApi = async (id) => {
   let response;
   try {
-    response = await api.post(`/blog/${id}`);
+    response = await api.get(`/blog/${id}`);
   } catch (error) {
     return error
   }
@@ -80,10 +80,20 @@ export const SubmitBlogApi = async (data) => {
   return response;
 }
 
+export const UpdateBlogApi = async (data) => {
+  let response;
+  try {
+    response = await api.put(`/blog`, data);
+  } catch (error) {
+    return error
+  }
+  return response;
+}
+
 export const DeleteBlogApi = async (id) => {
   let response;
   try {
-    response = await api.post(`/blog/${id}`);
+    response = await api.delete(`/blog/${id}`);
   } catch (error) {
     return error
   }
@@ -115,3 +125,41 @@ export const PostCommentBlogApi = async (data) => {
   }
   return response;
 }
+
+
+
+
+
+
+
+
+
+
+
+// Refresh Token
+
+
+api.interceptors.response.use(
+  (config) => config,
+  async (error) => {
+    const originalReq = error.config;
+
+    if (
+      (error.response.status === 401 || error.response.status === 500) &&
+      originalReq &&
+      !originalReq._isRetry
+    ) {
+      originalReq.isRetry = true;
+
+      try {
+        await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`, {
+          withCredentials: true,
+        });
+
+        return api.request(originalReq);
+      } catch (error) {
+        return error;
+      }
+    }
+  }
+);

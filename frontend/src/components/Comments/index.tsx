@@ -10,15 +10,16 @@ interface CommentProps {
 
 const Comment: React.FC<CommentProps> = ({ comment }) => {
 
-  const { authorUsername , content, createdAt } = comment;
+  const { authorUsername, content, createdAt } = comment;
+
   const date = new Date(createdAt).toDateString();
 
   return (
     <div className={style.comment}>
+      <div className={style.commentText}>{content}</div>
       <div className={style.header}>
         <div className={style.author}>{authorUsername}</div>
         <div className={style.date}>{date}</div>
-        <div className={style.commentText}>{content}</div>
       </div>
     </div>
   );

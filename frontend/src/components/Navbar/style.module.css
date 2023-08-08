@@ -1,3 +1,7 @@
+header{
+  padding: 20px 0 40px;
+}
+
 .active {
   color: #ffffff;
   font-size: 18px;
@@ -18,8 +22,16 @@
   gap: 7px;
 }
 
+.header__logo a{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  font-size: 35px;
+}
+
 .header__logo img{
-  width: 60%;
+  width: 60px;
 }
 
 header nav {

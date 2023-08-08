@@ -88,26 +88,30 @@ const blogController = {
     },
 
     async update(req,res,next){
+
+
       
         const { error } = updateBlogSchema.validate(req.body);
 
+   
         const { title, content, author, blogId, photo } = req.body;
     
         // delete previous photo
         // save new photo
     
         let blog;
-    
+
+
         try {
-          blog = await Blog.findOne({ _id: blogId });
-        } catch (error) {
-          return next(error);
-        }
-    
+            blog = await Blog.findOne({ _id: blogId });
+          } catch (error) {
+            return next(error);
+          }
+      
         if (photo) {
-          let previousPhoto = blog.photoPath;
+            let previousPhoto =  blog.photoPath;
     
-          previousPhoto = previousPhoto.split("/").at(-1);
+            previousPhoto = previousPhoto.split("/").at(-1);
     
           // delete photo
           fs.unlinkSync(`storage/${previousPhoto}`);
@@ -140,8 +144,8 @@ const blogController = {
     async delete(req,res,next){
         const {error} = deleteBlogSchema.validate(req.body)
 
+   
         const {id} = req.params;
-
         try {
             await Blog.deleteOne({_id: id});
             await Comment.deleteMany({blog: id });

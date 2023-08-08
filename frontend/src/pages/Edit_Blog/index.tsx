@@ -3,18 +3,19 @@ import { PageTitle } from "../../utils";
 import style from "./style.module.css";
 import { Box, Button, Container, Grid } from "@mui/material";
 import { useState } from "react";
-import { SubmitBlogApi } from "../../api/internal";
+import { UpdateBlogApi } from "../../api/internal";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Alert } from "../../components";
 import SpinnerLoader from "../../components/ButtonLoader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
-const SubmitBlog: React.FC = () => {
+const EditBlog: React.FC = () => {
 
 
-
+    const params = useParams();
+    const blogId = params.id;
     const navigate = useNavigate()
 
     const [title, setTitle] = useState("");
@@ -36,23 +37,40 @@ const SubmitBlog: React.FC = () => {
 
     const submitHandler = async () => {
         setLoading(true)
-        const data = {
+    
+
+
+
+
+        let data;
+        if (photo.includes("http")) {
+          data = {
+            author,
+            title,
+            content,
+            blogId,
+          };
+        } else {
+          data = {
             author,
             title,
             content,
             photo,
-        };
+            blogId,
+          };
+        }
+    
 
-        const response: any = await SubmitBlogApi(data);
+        const response: any = await UpdateBlogApi(data);
         if (response.status === 201) {
-          
+            setTitle("")
+            setContent("")
+            setPhoto("")
             setLoading(false)
-            toast.success("Posted Successfully")
-
+            toast.success("Updated Blog Successfully")
             setTimeout(() => {
                 navigate("/blogs")
             }, 1000)
-             
 
         } else {
             setLoading(false)
@@ -63,15 +81,15 @@ const SubmitBlog: React.FC = () => {
     return (
         <Layout>
             <section className={style.auth__login}>
-                <h4>Post a Blog :) </h4>
-                <PageTitle title="Post a Blog" />
+                <h4>Edit your Blog </h4>
+                <PageTitle title="Edit a Blog" />
 
                 <Container maxWidth="xl">
                     <Grid container>
                         <Grid item lg={6} md={6} xs={12} sx={{ mx: 'auto' }}>
                             <form onSubmit={submitHandler}>
                                 <div className={style.input__boxess}>
-                                    <label htmlFor="title">Title</label>
+                                    <label htmlFor="title">Change Title</label>
                                     <input
                                         type='text'
                                         placeholder="Enter blog heading "
@@ -81,7 +99,7 @@ const SubmitBlog: React.FC = () => {
                                 </div>
 
                                 <div className={style.input__boxess}>
-                                    <label htmlFor="content">Content</label>
+                                    <label htmlFor="content">Change Content</label>
                                     <textarea
                                         id='content'
                                         placeholder="Enter your content "
@@ -91,7 +109,7 @@ const SubmitBlog: React.FC = () => {
                                     />
                                 </div>
                                 <div className={style.input__boxess}>
-                                    <label className={style.upload_btn} htmlFor="photo">Upload Image</label>
+                                    <label className={style.upload_btn} htmlFor="photo">Change Image</label>
                                     <input
                                         className={style.input__hidden}
                                         type="file"
@@ -107,7 +125,7 @@ const SubmitBlog: React.FC = () => {
                                 </Box>
                                 <Button className={style.btn_wrap} variant="outlined" onClick={submitHandler} >
                                     {
-                                        loading ? <SpinnerLoader />  :  `Blog Submit`
+                                        loading ? <SpinnerLoader />  :  `Update Blog`
                                     }
                                 </Button>
                             </form>
@@ -120,4 +138,4 @@ const SubmitBlog: React.FC = () => {
     )
 }
 
-export default SubmitBlog
+export default EditBlog

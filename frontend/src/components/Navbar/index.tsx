@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
         <Grid container>
           <Grid item xs={2}>
             <div className={style.header__logo}>
-              <Link to="/" ><img src={logo} alt="logo" /></Link>
+              <Link to="/" ><img src={logo} alt="logo" /> OINBASE</Link>
             </div>
           </Grid>
           <Grid item xs={8} sx={{ alignSelf: 'center' }}>

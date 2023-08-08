@@ -48,6 +48,7 @@ const Login: React.FC = () => {
                 username: response.data.user.username,
                 email: response.data.user.email,
                 auth: response.data.auth,
+                name: response.data.name
             }
             dispatch(setUser(user));
             setLoading(false)
