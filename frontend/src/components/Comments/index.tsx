@@ -16,9 +16,11 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
 
   return (
     <div className={style.comment}>
-      <div className={style.commentText}>{content}</div>
+        <div className={style.commentText}>{content}</div>
+
       <div className={style.header}>
         <div className={style.author}>{authorUsername}</div>
+        <div>comment on </div>
         <div className={style.date}>{date}</div>
       </div>
     </div>

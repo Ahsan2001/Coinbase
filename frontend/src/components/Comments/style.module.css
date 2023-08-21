@@ -5,13 +5,15 @@
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 12px;
   }
   
   .author {
-    color: #c4c5c5;
+    color: #eaff08;
+    font-size: 12px;
     font-weight: bold;
-    margin-right: 10px;
   }
   
   .date {
@@ -21,9 +23,12 @@
   }
   
   .commentText {
-    font-size: 18px;
-    padding: 5px 0;
-    color: #62b767;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000;
     font-weight: 600;
-    font-style: italic;
+    background: #fafafa;
   }

@@ -43,3 +43,7 @@
 .buttonsMain button{
     margin: 0 10px 0px 0;
 }
+
+.blogContent img{
+    width: 100%;
+}

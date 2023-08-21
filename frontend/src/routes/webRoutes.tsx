@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Error, Login, Signup, CryptoCurrency, Blogs, SubmitBlog, BlogDetail, EditBlog } from '../pages';
+import {  Error, Login, Signup,  Blogs, SubmitBlog, BlogDetail, EditBlog } from '../pages';
 import ProtectedRoute from './protectedRoutes';
 import { useSelector } from 'react-redux';
 import useAutoLogin from '../hooks/autoLogin';
@@ -18,15 +18,8 @@ const WebRoutes: React.FC = () => {
   ) : (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cryptocurrency" element={<CryptoCurrency />} />
- 
-        <Route path="/blogs"
-          element={
-            <ProtectedRoute isAuth={isAuthenticated}>
-              <Blogs />
-            </ProtectedRoute>
-          } />
+
+        <Route path="/" element={  <Blogs />   } />
 
         <Route path="/blog/:id"
           element={
@@ -35,8 +28,6 @@ const WebRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-
-
         <Route path="/blog-update/:id"
           element={
             <ProtectedRoute isAuth={isAuthenticated}>
@@ -44,20 +35,12 @@ const WebRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-
-
-
-
-
-
-
         <Route path="/write-blog"
           element={
             <ProtectedRoute isAuth={isAuthenticated}>
               <SubmitBlog />
             </ProtectedRoute>
           } />
-
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

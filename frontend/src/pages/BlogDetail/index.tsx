@@ -47,6 +47,7 @@ const BlogDetail: React.FC = () => {
         setOwnsBlog(username === blogResponse.data.blog.authorUsername);
       }
       if (commentResponse.status === 201) {
+
         setComments(commentResponse.data.data);
       }
       setIsLoading(false)

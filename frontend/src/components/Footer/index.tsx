@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
             <Grid container>
                 <Grid item xs={12}>
                     <footer className={style.footer__line}>
-                      <p>Copyright © 2023 Coinbase | All rights reserved.   </p>
+                      <p> Personal Blog Web App Developed By Ahsan Shaikh   </p>
                     </footer>
                 </Grid>
             </Grid>

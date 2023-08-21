@@ -1,8 +1,8 @@
-# Coinbase Blog App  
+# Personal Blog Web App  
 
-A simple Blog web app, allowing easy integration with your applications.
+A simple Blog web app, with all the main functionality like read edit delete and update.
 
-## Features
+### Features
 
 - User Authentication 
 - Users can create an account with their name, username, email address and password.
@@ -17,7 +17,7 @@ A simple Blog web app, allowing easy integration with your applications.
 - Functionalities are protected by role-based access control (RBAC), ensuring that only authenticated
 
 
-## Tech Stack
+### Tech Stack
 - Frontend: Vite, Typescript, React, Redux, Yup, FormIk, Axios, React-Toastify 
 - Backend: Node.js, Express.js, Joi, Bcryptjs, Cookie-parser
 - Database: MongoDB, Mongoose
@@ -27,57 +27,43 @@ A simple Blog web app, allowing easy integration with your applications.
 - Deployment: Docker Hub
 
 
-## User Interface (UI)
+### User Interface (UI)
 The UI is implemented using Material-UI, a popular UI library for React applications,
 and custom style modules css
 
 
-## Database Schema
+### Database Schema
 The website uses MongoDB, a popular NoSQL database, for storing comments, blogs and user information. 
 
 
-## Installation
-
+### Installation
 Follow these steps to integrate the Blog web into your project:
 
 1. Clone the repository:
-
-   git clone https://github.com/Ahsan2001/Coinbase.git
+_**git clone https://github.com/Ahsan2001/personal-blog-app.git**_
 
 
 
 ### Running Frontend
 
 2. Navigate into the frontend directory:
-
-   cd Coinbase/frontend
-
 3. Install frontend dependencies using npm:
-
-   npm install
-
-4. Running Frontend 
-
-   npm run dev
+   _**npm install**_
+4. Running Frontend:
+   _**npm run dev**_
 
 
 ### Running Backend
 
 5. Navigate into the Backend directory:
-
-   cd Coinbase/backend
-
 6. Install Backend dependencies using npm:
-
-   npm install
-
-7. Running Backend 
-
-   npm run dev
+   _**npm install**_
+7. Running Backend : 
+   _**npm run dev**_
 
 
 
-## Developer
+### Developer
 
-- Name: Muhammad Ahsan Sabir Shaikh
-- Contact: +92 3132034514
+- Name: **Muhammad Ahsan Sabir Shaikh**
+- Contact: **+92 3132034514**

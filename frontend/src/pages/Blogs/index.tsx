@@ -44,7 +44,7 @@ const Blogs: React.FC = () => {
   return (
     <Layout>
       <PageTitle title="Blogs Page" />
-      <section>
+      <section className={style.blogMain}>
         {blog.length === 0 ? (
           <h1 className={style.heading_one}>No blogs available.</h1>
         ) :
